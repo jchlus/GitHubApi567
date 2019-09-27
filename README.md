@@ -1,3 +1,3 @@
 # GitHubApi567
 Hw4
-idk what this is for yet
+ - All tests passed and results were correct
