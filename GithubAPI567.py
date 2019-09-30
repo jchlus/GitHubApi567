@@ -24,12 +24,30 @@ def getUser(variable):
     for repository in repos:
         commits = requests.get("https://api.github.com/repos/" + variable + "/" + repository + "/commits")
         y = json.loads(commits.text)
-        
-        t = 0
-        numberCommit = []
-        while t < len(y):
-            numberCommit.append(y[t]['"commit"'])
-            t = t + 1
-            
-        print('Repo: ' + repository + 'Number of commits: ' + len(numberCommit))       
+        print('Repo: ' + repository + ' - Number of commits: ' + str(len(y)))       
 getUser(username)
+
+
+#Below I tested two of my friends githubs and they were all correct. I also tested (with print statements)
+#The output of the requests.get (variable)
+#The array of repos
+#The requests.get (variable + repository)
+
+#Test 1
+#print(getUser("tommypinto"))
+#$Output should be
+#Repo: SchoolWork - Number of commits: 3
+
+#Test 2
+#print(getUser("tkautz12"))
+#$Output should be
+#Repo: Everything- - Number of commits: 15
+
+#Test 3
+#print(getUser("jchlus"))
+#$Output should be
+#Repo: Baseball-scouter - Number of commits: 6
+#Repo: GitHubApi567 - Number of commits: 4
+#Repo: SW-567 - Number of commits: 1
+#Repo: Triangle567-Hw02 - Number of commits: 3
+#Repo: Triangles - Number of commits: 2
