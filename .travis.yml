@@ -12,4 +12,4 @@ install:
   - pip install requests
 # command to run tests
 script:
- - python GithubAPI567s
+ - python -m unittest GithubAPI567
